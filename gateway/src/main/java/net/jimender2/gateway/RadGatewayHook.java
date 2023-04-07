@@ -11,6 +11,7 @@ import com.inductiveautomation.perspective.common.api.ComponentRegistry;
 import com.inductiveautomation.perspective.gateway.api.ComponentModelDelegateRegistry;
 import com.inductiveautomation.perspective.gateway.api.PerspectiveContext;
 import net.jimender2.common.RadComponents;
+import net.jimender2.common.component.display.Diagram;
 import net.jimender2.common.component.display.Image;
 import net.jimender2.common.component.display.Messenger;
 import net.jimender2.common.component.display.TagCounter;
@@ -45,6 +46,7 @@ public class RadGatewayHook extends AbstractGatewayModuleHook {
             this.componentRegistry.registerComponent(Image.DESCRIPTOR);
             this.componentRegistry.registerComponent(TagCounter.DESCRIPTOR);
             this.componentRegistry.registerComponent(Messenger.DESCRIPTOR);
+            this.componentRegistry.registerComponent(Diagram.DESCRIPTOR);
         } else {
             log.error("Reference to component registry not found, Rad Components will fail to function!");
         }
@@ -65,6 +67,7 @@ public class RadGatewayHook extends AbstractGatewayModuleHook {
             this.componentRegistry.removeComponent(Image.COMPONENT_ID);
             this.componentRegistry.removeComponent(TagCounter.COMPONENT_ID);
             this.componentRegistry.removeComponent(Messenger.COMPONENT_ID);
+            this.componentRegistry.removeComponent(Diagram.COMPONENT_ID);
         } else {
             log.warn("Component registry was null, could not unregister Rad Components.");
         }

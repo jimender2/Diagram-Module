@@ -8,6 +8,8 @@ import com.inductiveautomation.ignition.designer.model.DesignerContext;
 import com.inductiveautomation.perspective.designer.DesignerComponentRegistry;
 import com.inductiveautomation.perspective.designer.api.ComponentDesignDelegateRegistry;
 import com.inductiveautomation.perspective.designer.api.PerspectiveDesignerInterface;
+
+import net.jimender2.common.component.display.Diagram;
 import net.jimender2.common.component.display.Image;
 import net.jimender2.common.component.display.Messenger;
 import net.jimender2.common.component.display.TagCounter;
@@ -51,6 +53,7 @@ public class RadDesignerHook extends AbstractDesignerModuleHook {
         registry.registerComponent(Image.DESCRIPTOR);
         registry.registerComponent(TagCounter.DESCRIPTOR);
         registry.registerComponent(Messenger.DESCRIPTOR);
+        registry.registerComponent(Diagram.DESCRIPTOR);
 
         // register design delegates to get the special config UI when a component type
         // is selected in the designer
@@ -66,6 +69,7 @@ public class RadDesignerHook extends AbstractDesignerModuleHook {
         registry.removeComponent(Image.COMPONENT_ID);
         registry.removeComponent(TagCounter.COMPONENT_ID);
         registry.removeComponent(Messenger.COMPONENT_ID);
+        registry.removeComponent(Diagram.COMPONENT_ID);
 
         delegateRegistry.remove(TagCounter.COMPONENT_ID);
     }
